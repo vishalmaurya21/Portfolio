@@ -1,0 +1,453 @@
+@import "tailwindcss";
+
+/* ========================================
+   BLACK & WHITE THEME
+   ======================================== */
+
+:root {
+  /* Background colors */
+  --background: #0a0a0a;
+  --background-secondary: #111111;
+  --background-tertiary: #1a1a1a;
+
+  /* Text colors */
+  --foreground: #f5f5f5;
+  --foreground-muted: #a0a0a0;
+
+  /* White/Gray accent colors */
+  --neon-white: #ffffff;
+  --neon-silver: #e0e0e0;
+  --neon-gray: #c0c0c0;
+  --neon-smoke: #909090;
+  --neon-light: #f0f0f0;
+
+  /* Gradients */
+  --gradient-neon: linear-gradient(135deg, var(--neon-white), var(--neon-silver));
+  --gradient-glow: linear-gradient(135deg, var(--neon-silver), var(--neon-light));
+
+  /* Shadows */
+  --glow-white: 0 0 20px rgba(255, 255, 255, 0.5);
+  --glow-silver: 0 0 20px rgba(224, 224, 224, 0.5);
+  --glow-gray: 0 0 20px rgba(192, 192, 192, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom white/gray colors for Tailwind */
+  --color-neon-white: #ffffff;
+  --color-neon-silver: #e0e0e0;
+  --color-neon-gray: #c0c0c0;
+  --color-neon-smoke: #909090;
+  --color-neon-light: #f0f0f0;
+  --color-neon-cyan: #ffffff;
+  --color-neon-magenta: #e0e0e0;
+  --color-neon-purple: #c0c0c0;
+  --color-neon-pink: #f0f0f0;
+  --color-neon-red: #ffffff;
+  --color-neon-crimson: #e0e0e0;
+  --color-dark: #0a0a0a;
+  --color-dark-secondary: #111111;
+  --color-dark-tertiary: #1a1a1a;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--neon-white), var(--neon-silver));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--neon-silver), var(--neon-white));
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-gradient {
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: var(--gradient-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-cyan {
+  box-shadow: var(--glow-white);
+}
+
+.glow-magenta {
+  box-shadow: var(--glow-silver);
+}
+
+.glow-purple {
+  box-shadow: var(--glow-gray);
+}
+
+.glass {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 51, 0.6);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-arrow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes typing-cursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-bounce-arrow {
+  animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  color: var(--foreground-muted);
+  max-width: 600px;
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+.btn-primary {
+  background: var(--gradient-neon);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--neon-white);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  border: 2px solid var(--neon-white);
+  transition: all 0.3s ease;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   CARD STYLES
+   ======================================== */
+
+.card {
+  background: var(--background-secondary);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   PROGRESS BAR STYLES
+   ======================================== */
+
+.progress-bar {
+  height: 8px;
+  background: var(--background-tertiary);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--gradient-neon);
+  border-radius: 9999px;
+  transition: width 1s ease-out;
+}
+
+/* ========================================
+   INPUT STYLES
+   ======================================== */
+
+.input-field {
+  background: var(--background-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  color: var(--foreground);
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--neon-white);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.input-field::placeholder {
+  color: var(--foreground-muted);
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+.responsive-text-xl {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+}
+
+.responsive-text-2xl {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.responsive-text-3xl {
+  font-size: clamp(1.875rem, 6vw, 3rem);
+}
+
+.responsive-text-5xl {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+}
+
+.responsive-text-7xl {
+  font-size: clamp(3rem, 10vw, 5rem);
+}
+
+/* ========================================
+   RESPONSIVE IMAGES
+   ======================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}
