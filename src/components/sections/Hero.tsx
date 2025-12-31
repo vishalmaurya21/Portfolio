@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Twitter } from 'lucide-react';
 import TypingText from '../ui/TypingText';
 import GlitchText from '../ui/GlitchText';
+import TextPressure from '../ui/TextPressure';
 import MagneticButton from '../ui/MagneticButton';
 
 export default function Hero() {
@@ -37,7 +38,7 @@ export default function Hero() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6"
                         >
-                            <GlitchText text="Vishal Kumar" className="text-gradient" />
+                            <TextPressure text="Vishal Kumar" className="text-white" />
                         </motion.h1>
 
                         {/* Typing Text */}
