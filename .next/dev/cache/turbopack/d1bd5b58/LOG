@@ -75,3 +75,39 @@ FAM | META SEQ | SST SEQ         | RANGE
   2 | 00000089 | 00000083 SST    |           [======================================================================================]   | 1aa55c9b62cfec88-f91cf9832e67c185 (0 MiB, fresh)
   3 | 00000090 | 00000085 SST    |                                                      O                                               | 891eca3a7799a5a9-891eca3a7799a5a9 (0 MiB, fresh)
   4 | 00000091 | 00000086 SST    |                            O                                                                         | 4560fc466e58826a-4560fc466e58826a (0 MiB, fresh)
+Time 2025-12-31T17:15:21.8928632Z
+Commit 00000097 4 keys in 10ms 466µs 800ns
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000095 | 00000094 SST    |                        [=======================================================================]     | 3aefa6fd5cf2deb4-f42f94001fcb5351 (0 MiB, fresh)
+  2 | 00000096 | 00000093 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+  1 | 00000097 | 00000092 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+Time 2025-12-31T17:15:33.362823Z
+Commit 00000103 4 keys in 13ms 833µs 500ns
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000101 | 00000100 SST    |                        [=======================================================================]     | 3aefa6fd5cf2deb4-f42f94001fcb5351 (0 MiB, fresh)
+  2 | 00000102 | 00000099 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+  1 | 00000103 | 00000098 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+Time 2025-12-31T17:15:54.9049909Z
+Commit 00000109 4 keys in 8ms 302µs 900ns
+FAM | META SEQ | SST SEQ         | RANGE
+  1 | 00000107 | 00000104 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+  0 | 00000108 | 00000106 SST    |                        [=======================================================================]     | 3aefa6fd5cf2deb4-f42f94001fcb5351 (0 MiB, fresh)
+  2 | 00000109 | 00000105 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+Time 2025-12-31T17:16:34.6532254Z
+Commit 00000115 4 keys in 12ms 138µs 500ns
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000113 | 00000112 SST    |                        [=======================================================================]     | 3aefa6fd5cf2deb4-f42f94001fcb5351 (0 MiB, fresh)
+  1 | 00000114 | 00000110 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+  2 | 00000115 | 00000111 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+Time 2025-12-31T17:21:06.8596224Z
+Commit 00000121 4 keys in 12ms 566µs
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000119 | 00000118 SST    |                        [=======================================================================]     | 3aefa6fd5cf2deb4-f42f94001fcb5351 (0 MiB, fresh)
+  2 | 00000120 | 00000117 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+  1 | 00000121 | 00000116 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+Time 2025-12-31T17:23:27.9016166Z
+Commit 00000127 4 keys in 9ms 106µs 300ns
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000125 | 00000124 SST    |                        [=======================================================================]     | 3aefa6fd5cf2deb4-f42f94001fcb5351 (0 MiB, fresh)
+  1 | 00000126 | 00000123 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
+  2 | 00000127 | 00000122 SST    |                         O                                                                            | 3ffdfb3b7d50fcf1-3ffdfb3b7d50fcf1 (0 MiB, fresh)
