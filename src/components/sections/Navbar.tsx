@@ -64,6 +64,7 @@ export default function Navbar() {
                                 key={link.name}
                                 onClick={() => handleLinkClick(link.href)}
                                 whileHover={{ scale: 1.05 }}
+                                aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
                                 className={`relative px-2 py-1 text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
                                     ? 'text-neon-cyan'
                                     : 'text-gray-300 hover:text-white'
@@ -94,6 +95,7 @@ export default function Navbar() {
                     <button
                         onClick={() => handleLinkClick('#home')}
                         className="text-xl font-bold text-gradient"
+                        aria-label="Go to home"
                     >
                         VK
                     </button>
@@ -103,6 +105,7 @@ export default function Navbar() {
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="p-2 text-white"
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                     >
                         <AnimatePresence mode="wait">
                             {isMobileMenuOpen ? (
@@ -148,6 +151,7 @@ export default function Navbar() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.05 }}
                                         onClick={() => handleLinkClick(link.href)}
+                                        aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
                                         className={`text-left py-2 px-4 rounded-lg transition-all ${activeSection === link.href.slice(1)
                                             ? 'bg-white/10 text-gradient font-medium'
                                             : 'text-gray-300 hover:bg-white/5'

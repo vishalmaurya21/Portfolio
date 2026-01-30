@@ -101,7 +101,9 @@ export default function Contact() {
                             {/* Name & Email Row */}
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="relative">
+                                    <label htmlFor="contact-name" className="sr-only">Your Name</label>
                                     <input
+                                        id="contact-name"
                                         type="text"
                                         placeholder="Your Name"
                                         value={formData.name}
@@ -117,7 +119,9 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div className="relative">
+                                    <label htmlFor="contact-email" className="sr-only">Your Email</label>
                                     <input
+                                        id="contact-email"
                                         type="email"
                                         placeholder="Your Email"
                                         value={formData.email}
@@ -136,7 +140,9 @@ export default function Contact() {
 
                             {/* Subject */}
                             <div className="relative">
+                                <label htmlFor="contact-subject" className="sr-only">Subject</label>
                                 <input
+                                    id="contact-subject"
                                     type="text"
                                     placeholder="Subject"
                                     value={formData.subject}
@@ -154,7 +160,9 @@ export default function Contact() {
 
                             {/* Message */}
                             <div className="relative">
+                                <label htmlFor="contact-message" className="sr-only">Your Message</label>
                                 <textarea
+                                    id="contact-message"
                                     placeholder="Your Message"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
