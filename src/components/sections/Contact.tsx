@@ -101,7 +101,9 @@ export default function Contact() {
                             {/* Name & Email Row */}
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="relative">
+                                    <label htmlFor="name" className="sr-only">Your Name</label>
                                     <input
+                                        id="name"
                                         type="text"
                                         placeholder="Your Name"
                                         value={formData.name}
@@ -117,7 +119,9 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div className="relative">
+                                    <label htmlFor="email" className="sr-only">Your Email</label>
                                     <input
+                                        id="email"
                                         type="email"
                                         placeholder="Your Email"
                                         value={formData.email}
@@ -136,7 +140,9 @@ export default function Contact() {
 
                             {/* Subject */}
                             <div className="relative">
+                                <label htmlFor="subject" className="sr-only">Subject</label>
                                 <input
+                                    id="subject"
                                     type="text"
                                     placeholder="Subject"
                                     value={formData.subject}
@@ -154,7 +160,9 @@ export default function Contact() {
 
                             {/* Message */}
                             <div className="relative">
+                                <label htmlFor="message" className="sr-only">Your Message</label>
                                 <textarea
+                                    id="message"
                                     placeholder="Your Message"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -176,6 +184,7 @@ export default function Contact() {
                                 disabled={formState === 'loading' || formState === 'success'}
                                 whileHover={{ scale: formState === 'idle' ? 1.02 : 1 }}
                                 whileTap={{ scale: formState === 'idle' ? 0.98 : 1 }}
+                                aria-label={formState === 'loading' ? 'Sending message...' : undefined}
                                 className={`w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 border-2 ${formState === 'success'
                                     ? 'bg-green-500 text-white border-green-500'
                                     : formState === 'loading'
@@ -212,6 +221,8 @@ export default function Contact() {
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0.8 }}
                                             className="flex items-center gap-2"
+                                            role="status"
+                                            aria-live="polite"
                                         >
                                             Message Sent! <Check className="w-5 h-5" />
                                         </motion.span>

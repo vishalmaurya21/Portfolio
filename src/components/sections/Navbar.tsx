@@ -103,6 +103,8 @@ export default function Navbar() {
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="p-2 text-white"
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isMobileMenuOpen}
                     >
                         <AnimatePresence mode="wait">
                             {isMobileMenuOpen ? (
