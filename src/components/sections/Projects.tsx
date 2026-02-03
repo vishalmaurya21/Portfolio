@@ -86,6 +86,13 @@ export default function Projects() {
         ? projects
         : projects.filter((p) => p.category === activeCategory);
 
+    const handleKeyDown = (e: React.KeyboardEvent, projectId: number) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setExpandedProject(expandedProject === projectId ? null : projectId);
+        }
+    };
+
     return (
         <section
             id="projects"
@@ -150,7 +157,11 @@ export default function Projects() {
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.4, delay: index * 0.05 }}
                                     onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
-                                    className="card h-full cursor-pointer"
+                                    onKeyDown={(e) => handleKeyDown(e, project.id)}
+                                    className="card h-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-expanded={expandedProject === project.id}
                                 >
                                     {/* Project Image */}
                                     <div className="relative h-40 overflow-hidden bg-gradient-to-br from-neon-red/20 to-neon-crimson/20 flex items-center justify-center">

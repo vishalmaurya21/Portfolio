@@ -31,9 +31,9 @@ export default function Contact() {
     };
 
     const contactInfo = [
-        { icon: Mail, label: 'Email', value: 'iamviishalkumar@gmail.com' },
-        { icon: MapPin, label: 'Location', value: 'Ahmedabad, India' },
-        { icon: Phone, label: 'Phone', value: '+91 6393965886' },
+        { icon: Mail, label: 'Email', value: 'iamviishalkumar@gmail.com', href: 'mailto:iamviishalkumar@gmail.com' },
+        { icon: MapPin, label: 'Location', value: 'Ahmedabad, India', href: 'https://maps.google.com/?q=Ahmedabad,India' },
+        { icon: Phone, label: 'Phone', value: '+91 6393965886', href: 'tel:+916393965886' },
     ];
 
     return (
@@ -61,21 +61,24 @@ export default function Contact() {
 
                         <div className="space-y-6 mb-10">
                             {contactInfo.map((item, index) => (
-                                <motion.div
+                                <motion.a
                                     key={item.label}
+                                    href={item.href}
+                                    target={item.label === 'Location' ? '_blank' : undefined}
+                                    rel={item.label === 'Location' ? 'noopener noreferrer' : undefined}
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                                    className="flex items-center gap-4 group"
+                                    className="flex items-center gap-4 group outline-none"
                                 >
-                                    <div className="p-3 rounded-xl glass group-hover:glow-cyan transition-all duration-300">
+                                    <div className="p-3 rounded-xl glass group-hover:glow-cyan group-focus-visible:glow-cyan transition-all duration-300">
                                         <item.icon className="w-5 h-5 text-neon-cyan" />
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-400">{item.label}</p>
-                                        <p className="text-white font-medium">{item.value}</p>
+                                        <p className="text-white font-medium group-hover:text-neon-cyan transition-colors">{item.value}</p>
                                     </div>
-                                </motion.div>
+                                </motion.a>
                             ))}
                         </div>
 
@@ -98,10 +101,17 @@ export default function Contact() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Hidden Status for Screen Readers */}
+                            <div className="sr-only" aria-live="polite">
+                                {formState === 'loading' && 'Sending message...'}
+                                {formState === 'success' && 'Message sent successfully!'}
+                            </div>
                             {/* Name & Email Row */}
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="relative">
+                                    <label htmlFor="contact-name" className="sr-only">Your Name</label>
                                     <input
+                                        id="contact-name"
                                         type="text"
                                         placeholder="Your Name"
                                         value={formData.name}
@@ -117,7 +127,9 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div className="relative">
+                                    <label htmlFor="contact-email" className="sr-only">Your Email</label>
                                     <input
+                                        id="contact-email"
                                         type="email"
                                         placeholder="Your Email"
                                         value={formData.email}
@@ -136,7 +148,9 @@ export default function Contact() {
 
                             {/* Subject */}
                             <div className="relative">
+                                <label htmlFor="contact-subject" className="sr-only">Subject</label>
                                 <input
+                                    id="contact-subject"
                                     type="text"
                                     placeholder="Subject"
                                     value={formData.subject}
@@ -154,7 +168,9 @@ export default function Contact() {
 
                             {/* Message */}
                             <div className="relative">
+                                <label htmlFor="contact-message" className="sr-only">Your Message</label>
                                 <textarea
+                                    id="contact-message"
                                     placeholder="Your Message"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
