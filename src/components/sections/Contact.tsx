@@ -112,6 +112,11 @@ export default function Contact() {
                                     <label htmlFor="contact-name" className="sr-only">Your Name</label>
                                     <input
                                         id="contact-name"
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2 ml-1">
+                                        Name <span className="text-neon-cyan">*</span>
+                                    </label>
+                                    <input
+                                        id="name"
                                         type="text"
                                         placeholder="Your Name"
                                         value={formData.name}
@@ -119,6 +124,7 @@ export default function Contact() {
                                         onFocus={() => setFocused('name')}
                                         onBlur={() => setFocused(null)}
                                         required
+                                        aria-required="true"
                                         className={`input-field ${focused === 'name' ? 'ring-2 ring-neon-cyan/50' : ''}`}
                                     />
                                     <motion.div
@@ -130,6 +136,11 @@ export default function Contact() {
                                     <label htmlFor="contact-email" className="sr-only">Your Email</label>
                                     <input
                                         id="contact-email"
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2 ml-1">
+                                        Email <span className="text-neon-cyan">*</span>
+                                    </label>
+                                    <input
+                                        id="email"
                                         type="email"
                                         placeholder="Your Email"
                                         value={formData.email}
@@ -137,6 +148,7 @@ export default function Contact() {
                                         onFocus={() => setFocused('email')}
                                         onBlur={() => setFocused(null)}
                                         required
+                                        aria-required="true"
                                         className={`input-field ${focused === 'email' ? 'ring-2 ring-neon-cyan/50' : ''}`}
                                     />
                                     <motion.div
@@ -151,6 +163,11 @@ export default function Contact() {
                                 <label htmlFor="contact-subject" className="sr-only">Subject</label>
                                 <input
                                     id="contact-subject"
+                                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2 ml-1">
+                                    Subject <span className="text-neon-cyan">*</span>
+                                </label>
+                                <input
+                                    id="subject"
                                     type="text"
                                     placeholder="Subject"
                                     value={formData.subject}
@@ -158,6 +175,7 @@ export default function Contact() {
                                     onFocus={() => setFocused('subject')}
                                     onBlur={() => setFocused(null)}
                                     required
+                                    aria-required="true"
                                     className={`input-field ${focused === 'subject' ? 'ring-2 ring-neon-cyan/50' : ''}`}
                                 />
                                 <motion.div
@@ -171,12 +189,18 @@ export default function Contact() {
                                 <label htmlFor="contact-message" className="sr-only">Your Message</label>
                                 <textarea
                                     id="contact-message"
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2 ml-1">
+                                    Message <span className="text-neon-cyan">*</span>
+                                </label>
+                                <textarea
+                                    id="message"
                                     placeholder="Your Message"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                     onFocus={() => setFocused('message')}
                                     onBlur={() => setFocused(null)}
                                     required
+                                    aria-required="true"
                                     rows={5}
                                     className={`input-field resize-none ${focused === 'message' ? 'ring-2 ring-neon-cyan/50' : ''}`}
                                 />
@@ -184,6 +208,12 @@ export default function Contact() {
                                     animate={{ scaleX: focused === 'message' ? 1 : 0 }}
                                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-neon-cyan to-neon-magenta origin-left"
                                 />
+                            </div>
+
+                            {/* Form Status Announcement for Screen Readers */}
+                            <div aria-live="polite" className="sr-only">
+                                {formState === 'loading' && "Sending message..."}
+                                {formState === 'success' && "Message sent successfully!"}
                             </div>
 
                             {/* Submit Button */}
