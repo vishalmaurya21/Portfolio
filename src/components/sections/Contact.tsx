@@ -101,6 +101,9 @@ export default function Contact() {
                             {/* Name & Email Row */}
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="relative">
+                                    <label htmlFor="contact-name" className="sr-only">Your Name</label>
+                                    <input
+                                        id="contact-name"
                                     <label htmlFor="name" className="sr-only">Your Name</label>
                                     <input
                                         id="name"
@@ -119,6 +122,9 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div className="relative">
+                                    <label htmlFor="contact-email" className="sr-only">Your Email</label>
+                                    <input
+                                        id="contact-email"
                                     <label htmlFor="email" className="sr-only">Your Email</label>
                                     <input
                                         id="email"
@@ -140,6 +146,9 @@ export default function Contact() {
 
                             {/* Subject */}
                             <div className="relative">
+                                <label htmlFor="contact-subject" className="sr-only">Subject</label>
+                                <input
+                                    id="contact-subject"
                                 <label htmlFor="subject" className="sr-only">Subject</label>
                                 <input
                                     id="subject"
@@ -160,6 +169,9 @@ export default function Contact() {
 
                             {/* Message */}
                             <div className="relative">
+                                <label htmlFor="contact-message" className="sr-only">Your Message</label>
+                                <textarea
+                                    id="contact-message"
                                 <label htmlFor="message" className="sr-only">Your Message</label>
                                 <textarea
                                     id="message"

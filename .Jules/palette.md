@@ -1,3 +1,6 @@
+## 2025-05-14 - [Accessibility Improvements for Contact Form and Navigation]
+**Learning:** In highly visual/minimalist portfolios, accessibility is often overlooked, especially when using placeholders as the only field labels. Screen reader users rely on explicit labels and ARIA attributes to understand the purpose of interactive elements.
+**Action:** Always ensure inputs have associated <label> elements (even if hidden with sr-only) and icon-only buttons have descriptive aria-labels.
 ## 2026-02-02 - [Accessible Form Patterns]
 **Learning:** Modern portfolio templates often prioritize visual minimalism by using placeholders instead of labels, which breaks accessibility for screen reader users and users with cognitive disabilities.
 **Action:** Always add visually hidden labels (using Tailwind's `sr-only`) to form inputs that rely solely on placeholders.
